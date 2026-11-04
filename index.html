@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05080F">
+  <meta name="description" content="Korrix Technologies is a Canadian sovereign defence technology company developing next-generation counter-drone and passive sensing capabilities for defence and critical infrastructure.">
+  <title>KORRIX TECHNOLOGIES | The Invisible Shield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#05080F; --bg-2:#080E19; --panel:#0C1524; --panel-2:#101D30;
+      --line:rgba(150,178,215,.16); --text:#F2F6FC; --muted:#94A2B6;
+      --blue:#168CE0; --blue-2:#42B7FF; --amber:#F2AC45;
+      --head:"Barlow Condensed",Impact,sans-serif; --body:"DM Sans",Arial,sans-serif;
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 48px));margin:0 auto}
+    h1,h2,h3,.brand,.display,.ticker-track,.stat-number{font-family:var(--head);text-transform:uppercase;letter-spacing:.01em}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--blue-2);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:23px;height:1px;background:currentColor}
+    .section-label{color:var(--amber);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+    .section-title{font-size:clamp(48px,6.2vw,78px);line-height:.88;font-weight:800;margin:15px 0 0}
+    .section-title em{color:var(--blue-2);font-style:italic}
+    .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:36px;margin-bottom:50px}
+    .section-intro{max-width:390px;margin:0 0 4px;color:var(--muted);font-size:13px;line-height:1.85}
+    .site-header{height:76px;position:fixed;z-index:1000;inset:0 0 auto;background:rgba(5,8,15,.88);border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:800;letter-spacing:.055em}
+    .brand-mark{width:27px;height:31px;color:var(--blue-2)}
+    .brand span:last-child{color:var(--blue-2)}
+    .nav-links{display:flex;align-items:center;gap:30px;margin-left:auto;margin-right:30px}
+    .nav-links a{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#AAB7C8;transition:color .2s}
+    .nav-links a:hover{color:white}
+    .btn{min-height:47px;padding:0 21px;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid transparent;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--blue);color:white}
+    .btn-primary:hover{background:#2CA6F5}
+    .btn-ghost{border-color:rgba(173,198,230,.34);background:rgba(255,255,255,.015)}
+    .btn-ghost:hover{border-color:var(--blue-2)}
+    .menu-toggle{display:none;width:43px;height:42px;background:none;border:1px solid var(--line);color:white}
+    .hero{min-height:820px;height:100svh;max-height:980px;position:relative;display:flex;align-items:center;overflow:hidden;padding:130px 0 85px;background:radial-gradient(ellipse at 80% 46%,rgba(17,102,182,.2),transparent 38%),linear-gradient(90deg,#05080F 0%,rgba(5,8,15,.96) 43%,rgba(5,8,15,.45) 100%)}
+    .hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(rgba(92,147,204,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(92,147,204,.15) 1px,transparent 1px);background-size:62px 62px;mask-image:linear-gradient(90deg,transparent,black 72%)}
+    .hero-content{position:relative;z-index:2;max-width:770px}
+    .hero-kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(66,183,255,.28);background:rgba(17,100,166,.12);color:#9DDCFF;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .hero-kicker svg{width:13px;height:15px}
+    .hero h1{font-size:clamp(67px,9.5vw,128px);line-height:.79;font-weight:800;letter-spacing:-.015em;margin:28px 0 26px}
+    .hero h1 em{color:var(--blue-2);font-style:italic;font-weight:600}
+    .hero-copy{max-width:620px;color:#AAB7C8;font-size:15px;line-height:1.85;margin:0 0 31px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-proof{display:flex;gap:0;margin-top:62px;padding-top:19px;border-top:1px solid var(--line);max-width:690px}
+    .proof-item{padding:0 32px;border-right:1px solid var(--line)}
+    .proof-item:first-child{padding-left:0}
+    .proof-item:last-child{border:0}
+    .proof-item strong{display:block;font-family:var(--head);font-size:35px;line-height:1;font-weight:700}
+    .proof-item span{display:block;margin-top:7px;color:var(--muted);font-size:9px;letter-spacing:.14em;text-transform:uppercase}
+    .hero-orbit{position:absolute;width:min(55vw,700px);aspect-ratio:1;right:-4%;top:50%;transform:translateY(-47%);opacity:.82}
+    .orbit-rings{position:absolute;inset:4%;border:1px solid rgba(66,158,255,.25);border-radius:50%;box-shadow:0 0 0 58px rgba(37,125,211,.025),0 0 0 116px rgba(37,125,211,.018)}
+    .orbit-rings:before,.orbit-rings:after{content:"";position:absolute;inset:16%;border:1px solid rgba(66,158,255,.18);border-radius:50%}
+    .orbit-rings:after{inset:32%}
+    .orbit-cross{position:absolute;left:4%;right:4%;top:50%;height:1px;background:rgba(66,158,255,.22)}
+    .orbit-cross.v{transform:rotate(90deg)}
+    .orbit-sweep{position:absolute;inset:4%;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 292deg,rgba(25,135,235,.02) 310deg,rgba(42,164,255,.35) 358deg,transparent 360deg);animation:rotate 9s linear infinite;mask-image:radial-gradient(circle,transparent 0 8%,#000 9% 100%)}
+    .orbit-core{position:absolute;inset:45%;border:1px solid rgba(77,178,255,.5);border-radius:50%;box-shadow:0 0 38px rgba(29,142,239,.2)}
+    .orbit-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--blue-2);box-shadow:0 0 16px 4px rgba(50,160,255,.55)}
+    .orbit-dot.a{left:64%;top:27%}.orbit-dot.b{left:26%;top:64%;width:5px;height:5px}.orbit-dot.c{left:72%;top:72%;background:var(--amber);box-shadow:0 0 14px 4px rgba(242,172,69,.3)}
+    .orbit-caption{position:absolute;color:rgba(155,195,237,.55);font-size:8px;letter-spacing:.18em;text-transform:uppercase}
+    .orbit-caption.a{top:15%;left:52%}.orbit-caption.b{bottom:18%;left:12%}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    .ticker{position:relative;z-index:3;margin-top:-10px;overflow:hidden;background:var(--blue);color:white;transform:skewY(-1.2deg)}
+    .ticker-track{display:flex;width:max-content;animation:marquee 34s linear infinite;padding:16px 0;font-size:19px;font-weight:700;letter-spacing:.1em}
+    .ticker-track span{white-space:nowrap;padding:0 27px}
+    .ticker-track b{font-size:12px;color:#FFD18A;vertical-align:3px}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    .section-pad{padding:116px 0}
+    .threat{background:linear-gradient(180deg,#080E18,#05080F)}
+    .threat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .threat-card{min-height:252px;padding:28px;background:linear-gradient(145deg,rgba(17,28,46,.94),rgba(8,14,24,.98));border:1px solid var(--line);border-left:3px solid var(--amber)}
+    .card-no{font-family:var(--head);font-size:15px;color:var(--amber);letter-spacing:.12em}
+    .threat-card h3{font-size:30px;line-height:.94;margin:40px 0 12px}
+    .threat-card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0;max-width:310px}
+    .platform{background:#070D17;position:relative;overflow:hidden}
+    .platform:after{content:"";position:absolute;width:650px;height:650px;right:-340px;top:15%;border:1px solid rgba(55,139,229,.1);border-radius:50%;box-shadow:0 0 0 85px rgba(55,139,229,.018),0 0 0 170px rgba(55,139,229,.012);pointer-events:none}
+    .platform-grid{display:grid;grid-template-columns:1fr .88fr;gap:70px;align-items:center;position:relative;z-index:1}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+    .step-no{font-family:var(--head);font-size:25px;color:var(--blue-2)}
+    .step h3{font-size:27px;margin:0 0 7px}
+    .step p{font-size:12px;line-height:1.8;color:var(--muted);margin:0;max-width:440px}
+    .platform-panel{padding:32px;background:linear-gradient(145deg,#111F34,#0A1220);border:1px solid rgba(69,151,240,.28);box-shadow:0 22px 70px rgba(0,0,0,.24)}
+    .panel-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:20px;border-bottom:1px solid var(--line);color:#A8B9D0;font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+    .live-status{display:flex;align-items:center;gap:8px;color:#D4E2F3}
+    .live-status:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue-2);box-shadow:0 0 10px var(--blue)}
+    .latency{padding:28px 0 24px}
+    .latency strong{font-family:var(--head);font-size:91px;line-height:.85;display:block}
+    .latency strong span{color:var(--blue-2)}
+    .latency small{display:block;color:var(--muted);font-size:9px;letter-spacing:.17em;text-transform:uppercase;margin-top:12px}
+    .panel-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+    .panel-metrics div{padding:16px;background:#0B1524}
+    .panel-metrics strong{display:block;font-family:var(--head);font-size:27px}
+    .panel-metrics span{display:block;color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
+    .panel-footnote{font-size:10px;line-height:1.7;color:#77869B;margin:17px 0 0}
+    .domains{background:#05080F}
+    .domain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .domain-card{min-height:285px;padding:27px 25px;border:1px solid var(--line);background:linear-gradient(150deg,rgba(15,26,43,.86),rgba(7,12,21,.96));transition:transform .25s,border-color .25s}
+    .domain-card:hover{transform:translateY(-5px);border-color:rgba(66,183,255,.55)}
+    .domain-icon{width:46px;height:46px;display:grid;place-items:center;color:var(--blue-2);border:1px solid rgba(66,183,255,.3);background:rgba(22,140,224,.08);margin-bottom:54px}
+    .domain-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .domain-card h3{font-size:27px;line-height:.95;margin:0 0 10px}
+    .domain-card p{font-size:11px;line-height:1.75;color:var(--muted);margin:0}
+    .market{background:#0A1321;border-top:1px solid rgba(66,145,226,.2);border-bottom:1px solid rgba(66,145,226,.2);padding:55px 0}
+    .market-head{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;margin-bottom:30px}
+    .market-head h2{font-size:35px;margin:9px 0 0}
+    .market-head p{color:var(--muted);font-size:10px;max-width:310px;line-height:1.7;margin:0}
+    .market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+    .market-item{background:#0B1626;padding:24px 26px}
+    .market-number{font-family:var(--head);font-size:clamp(42px,5vw,62px);line-height:.9}
+    .market-number em{color:var(--blue-2);font-style:normal}
+    .market-item h3{font-size:18px;color:var(--blue-2);margin:12px 0 5px}
+    .market-item p{font-size:10px;color:var(--muted);line-height:1.7;margin:0}
+    .validation{background:#070D17}
+    .validation-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:65px;align-items:start}
+    .validation-copy{color:var(--muted);font-size:13px;line-height:1.85;margin-top:24px;max-width:430px}
+    .validation-badges{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:32px}
+    .validation-badge{padding:18px;border:1px solid var(--line);background:rgba(17,29,47,.65)}
+    .validation-badge strong{display:block;font-family:var(--head);font-size:28px;color:var(--blue-2)}
+    .validation-badge span{display:block;color:var(--muted);font-size:9px;line-height:1.55;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+    .team-title{font-family:var(--head);font-size:30px;margin:0 0 17px}
+    .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .team-card{padding:20px;border:1px solid var(--line);background:linear-gradient(145deg,#101B2C,#0A111D);min-height:160px}
+    .team-card h3{font-size:23px;line-height:.95;margin:0 0 8px}
+    .team-card .role{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-2);font-weight:700;line-height:1.5;margin-bottom:10px}
+    .team-card p{font-size:10px;line-height:1.7;color:var(--muted);margin:0}
+    .roadmap{background:#05080F}
+    .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .roadmap-card{padding:25px;border:1px solid var(--line);background:var(--panel);min-height:210px}
+    .roadmap-date{color:var(--amber);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+    .roadmap-card h3{font-size:26px;line-height:.95;margin:28px 0 10px}
+    .roadmap-card p{font-size:11px;color:var(--muted);line-height:1.75;margin:0}
+    .cta{padding:120px 0 105px;text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(17,105,186,.18),transparent 58%),#05080F}
+    .cta h2{font-size:clamp(57px,8vw,100px);line-height:.83;margin:18px auto 20px}
+    .cta h2 em{font-style:italic;color:var(--blue-2)}
+    .cta-copy{font-size:13px;line-height:1.8;color:var(--muted);max-width:480px;margin:0 auto 29px}
+    .contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px;margin-top:42px;color:#B6C3D4;font-size:11px}
+    .contact-details a:hover{color:var(--blue-2)}
+    .contact-details b{color:var(--blue-2);font-size:9px;letter-spacing:.14em;margin-right:8px}
+    footer{background:#04070D;border-top:1px solid var(--line);padding:24px 0}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .footer-tag{color:#76859A;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+    .footer-location{color:#9AA8BA;font-size:10px}
+    @media(max-width:900px){
+      .hero-orbit{right:-21%;width:73vw;opacity:.42}
+      .platform-grid{gap:35px}
+      .validation-grid{gap:35px}
+      .domain-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      .container{width:calc(100% - 36px)}
+      .site-header{height:68px}
+      .brand{font-size:22px}
+      .brand-mark{width:24px;height:28px}
+      .menu-toggle{display:grid;place-items:center}
+      .nav-cta{display:none}
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;margin:0;padding:15px 20px 22px;background:rgba(5,8,15,.98);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+      .nav-links.open{display:flex}
+      .nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}
+      .hero{height:auto;min-height:760px;padding:132px 0 65px}
+      .hero h1{font-size:clamp(64px,17vw,94px)}
+      .hero-copy{font-size:13px}
+      .hero-orbit{width:100vw;right:-48%;top:43%;opacity:.27}
+      .hero-proof{margin-top:48px}
+      .proof-item{padding:0 15px}
+      .proof-item:first-child{padding-left:0}
+      .proof-item strong{font-size:28px}
+      .proof-item span{font-size:7px;letter-spacing:.1em}
+      .section-pad{padding:82px 0}
+      .section-head{display:block;margin-bottom:34px}
+      .section-title{font-size:59px}
+      .section-intro{margin-top:18px}
+      .threat-grid{grid-template-columns:1fr}
+      .threat-card{min-height:205px}
+      .threat-card h3{margin-top:27px}
+      .platform-grid,.validation-grid{grid-template-columns:1fr;gap:38px}
+      .platform-panel{padding:23px 18px}
+      .latency strong{font-size:78px}
+      .domain-grid{grid-template-columns:1fr 1fr;gap:9px}
+      .domain-card{min-height:235px;padding:19px 15px}
+      .domain-icon{margin-bottom:40px;width:40px;height:40px}
+      .domain-card h3{font-size:22px}
+      .market{padding:42px 0}
+      .market-head{display:block}
+      .market-head p{margin-top:12px}
+      .market-grid{grid-template-columns:1fr}
+      .market-item{padding:19px 22px}
+      .market-number{font-size:48px}
+      .validation-badges{gap:8px}
+      .validation-badge{padding:14px}
+      .team-grid{gap:8px}
+      .team-card{padding:15px;min-height:165px}
+      .team-card h3{font-size:20px}
+      .roadmap-grid{grid-template-columns:1fr}
+      .roadmap-card{min-height:175px}
+      .roadmap-card h3{margin-top:20px}
+      .cta{padding:88px 0}
+      .cta h2{font-size:66px}
+      .contact-details{flex-direction:column;gap:15px}
+      .footer-row{flex-direction:column;text-align:center}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Korrix Technologies home">
+      <svg class="brand-mark" viewBox="0 0 28 34" fill="none" aria-hidden="true"><path d="M14 1.8 25 6v9.1c0 7.2-4.5 13.2-11 17.1C7.5 28.3 3 22.3 3 15.1V6L14 1.8Z" stroke="currentColor" stroke-width="2.3"/><path d="m14 7-5.7 2.2v5.8c0 4.2 2 7.9 5.7 10.9" stroke="currentColor" stroke-width="1.4" opacity=".65"/></svg>
+      KORRIX<span>.</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#threat">The Challenge</a><a href="#platform">The Platform</a><a href="#domains">Domains</a><a href="#company">Company</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#contact">Request a Briefing <span>↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="orbit-rings"></div><div class="orbit-cross"></div><div class="orbit-cross v"></div>
+      <div class="orbit-sweep"></div><div class="orbit-core"></div>
+      <i class="orbit-dot a"></i><i class="orbit-dot b"></i><i class="orbit-dot c"></i>
+      <span class="orbit-caption a">Sovereign awareness / 01</span><span class="orbit-caption b">Passive by design</span>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-kicker"><svg viewBox="0 0 16 18" fill="none"><path d="M8 1 14 3.5v5.1c0 4-2.5 7.3-6 9.4-3.5-2.1-6-5.4-6-9.4V3.5L8 1Z" stroke="currentColor" stroke-width="1.5"/></svg> Canadian Sovereign Defence Technology · DND Pre-Qualified</div>
+        <h1>The invisible<br><em>shield.</em></h1>
+        <p class="hero-copy">Next-generation counter-drone and passive sensing capabilities. Designed for defence and infrastructure. Built for a world where awareness cannot come at the cost of exposure.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Schedule a Defence Briefing <span>↗</span></a>
+          <a class="btn btn-ghost" href="#platform">Discover Korrix <span>↓</span></a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-item"><strong>&lt;0.4s</strong><span>Threat lock latency</span></div>
+          <div class="proof-item"><strong>100%</strong><span>Zero RF emission</span></div>
+          <div class="proof-item"><strong>98.5%+</strong><span>Field benchmark accuracy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-label="Korrix capabilities">
+    <div class="ticker-track">
+      <span>Counter-UAS <b>✳</b></span><span>Passive Sensing <b>✳</b></span><span>Zero RF Emission <b>✳</b></span><span>Maritime Security <b>✳</b></span><span>Sovereign Defence <b>✳</b></span><span>Multi-Domain Awareness <b>✳</b></span>
+      <span>Counter-UAS <b>✳</b></span><span>Passive Sensing <b>✳</b></span><span>Zero RF Emission <b>✳</b></span><span>Maritime Security <b>✳</b></span><span>Sovereign Defence <b>✳</b></span><span>Multi-Domain Awareness <b>✳</b></span>
+    </div>
+  </div>
+
+  <section class="threat section-pad" id="threat">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-label">01 / The operational gap</div><h2 class="section-title">The threat<br>has <em>changed.</em></h2></div>
+        <p class="section-intro">Autonomous and low-profile unmanned systems are challenging established defence models. Traditional detection can expose the defender, disrupt essential communications, or leave operational blind spots.</p>
+      </div>
+      <div class="threat-grid">
+        <article class="threat-card"><span class="card-no">01 / ACTIVE SYSTEMS</span><h3>Detection can<br>create exposure.</h3><p>Emitting systems can reveal their own presence. In contested environments, visibility is a vulnerability.</p></article>
+        <article class="threat-card"><span class="card-no">02 / RF DISRUPTION</span><h3>Interference has<br>consequences.</h3><p>Active jamming can disrupt civilian, emergency, and aviation communications. Regulatory constraints matter.</p></article>
+        <article class="threat-card"><span class="card-no">03 / NEW THREATS</span><h3>Old coverage<br>leaves gaps.</h3><p>Quiet, autonomous, low-altitude systems challenge conventional perimeter and air-defence coverage.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="platform section-pad" id="platform">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-label">02 / The Korrix platform</div><h2 class="section-title">Awareness.<br><em>Without exposure.</em></h2></div>
+        <p class="section-intro">A proprietary, passive sensing and data-fusion platform. One integrated approach to threat awareness across air, land, and maritime environments.</p>
+      </div>
+      <div class="platform-grid">
+        <div class="steps">
+          <article class="step"><div class="step-no">01</div><div><h3>Passive Detection</h3><p>Continuous environmental awareness. No active RF emissions. No broadcast footprint.</p></div></article>
+          <article class="step"><div class="step-no">02</div><div><h3>Intelligent Assessment</h3><p>Proprietary software interprets activity and brings multiple sources of information into a unified operational picture.</p></div></article>
+          <article class="step"><div class="step-no">03</div><div><h3>Threat Awareness</h3><p>Fast, actionable information for operators and connected command environments. Clarity when seconds matter.</p></div></article>
+        </div>
+        <aside class="platform-panel">
+          <div class="panel-top"><span>Korrix / Performance profile</span><span class="live-status">Field benchmark</span></div>
+          <div class="latency"><strong>&lt;0.4<span>s</span></strong><small>Threat lock latency</small></div>
+          <div class="panel-metrics">
+            <div><strong>100%</strong><span>Zero RF emission</span></div>
+            <div><strong>98.5%+</strong><span>Field benchmark accuracy</span></div>
+            <div><strong>DND</strong><span>Pre-qualified supplier</span></div>
+            <div><strong>Multi-domain</strong><span>Air · Land · Maritime</span></div>
+          </div>
+          <p class="panel-footnote">Figures and qualification statements are based on Korrix Technologies' supplied company materials. Results may vary by operational environment.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="domains section-pad" id="domains">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-label">03 / Multi-domain protection</div><h2 class="section-title">One platform.<br><em>Multiple domains.</em></h2></div>
+        <p class="section-intro">A unified sensing approach for the environments where national security, public safety, and economic continuity intersect.</p>
+      </div>
+      <div class="domain-grid">
+        <article class="domain-card">
+          <div class="domain-icon"><svg viewBox="0 0 24 24"><path d="M2 16h20l-3 4H6zM5 13l2-5h10l2 5M9 8V4h6v4M12 4V2"/></svg></div>
+          <h3>Maritime<br>Security</h3><p>Awareness for ports, harbours, vessels, and critical sea lines of communication.</p>
+        </article>
+        <article class="domain-card">
+          <div class="domain-icon"><svg viewBox="0 0 24 24"><path d="M3 20V9l5 3V8l5 4V5h3v15M2 20h20M17 10h3v10"/></svg></div>
+          <h3>Airspace &<br>Counter-UAS</h3><p>Protection for airport environments, military perimeters, and sensitive airspace.</p>
+        </article>
+        <article class="domain-card">
+          <div class="domain-icon"><svg viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5zM8.5 12l2.2 2.2 4.8-5"/></svg></div>
+          <h3>Land & Critical<br>Infrastructure</h3><p>Additional awareness for energy assets, essential facilities, and border environments.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="market" aria-label="Market opportunity">
+    <div class="container">
+      <div class="market-head">
+        <div><div class="section-label">04 / Market opportunity</div><h2 class="display">A multi-billion-dollar opportunity.</h2></div>
+        <p>Dual-use demand across defence, municipal, and critical infrastructure markets.</p>
+      </div>
+      <div class="market-grid">
+        <article class="market-item"><div class="market-number">$42.6<em>B</em></div><h3>Global TAM</h3><p>Global physical security and sensor market.</p></article>
+        <article class="market-item"><div class="market-number">$14.4<em>B</em></div><h3>Counter-UAS SAM</h3><p>Addressable counter-UAS market. 22.4% projected CAGR.</p></article>
+        <article class="market-item"><div class="market-number">$380<em>M</em></div><h3>Canadian SAM</h3><p>Immediate Canadian DND and site-addressable opportunity.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="validation section-pad" id="company">
+    <div class="container validation-grid">
+      <div>
+        <div class="section-label">05 / Validation & leadership</div>
+        <h2 class="section-title">Sovereign by<br><em>design.</em></h2>
+        <p class="validation-copy">Korrix is building Canadian defence capability through field-validated innovation, a resilient supply chain, and domestic production. The company is pre-qualified under Canada's Department of National Defence Defence Drone Initiative for Payload and Fusion Software streams.</p>
+        <div class="validation-badges">
+          <div class="validation-badge"><strong>DND</strong><span>Pre-qualified supplier</span></div>
+          <div class="validation-badge"><strong>98.5%+</strong><span>Field benchmark accuracy</span></div>
+          <div class="validation-badge"><strong>100%</strong><span>Onshore supply chain</span></div>
+          <div class="validation-badge"><strong>Canada</strong><span>Ottawa & Campbell’s Bay</span></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="team-title">Executive Leadership</h3>
+        <div class="team-grid">
+          <article class="team-card"><h3>Fred Schwartz</h3><div class="role">Chief Executive Officer</div><p>Corporate strategy, international deals, and sovereign defence compliance.</p></article>
+          <article class="team-card"><h3>Dr. Farid Bensebaa</h3><div class="role">COO & Head of R&D</div><p>Former NRC senior scientist and team leader. 15+ years in signal processing, AI, and data science.</p></article>
+          <article class="team-card"><h3>Volodymyr Shevchuk</h3><div class="role">Chief Technology Officer</div><p>Security architecture and sovereign hardware supply chain.</p></article>
+          <article class="team-card"><h3>Arthur W. Salyer</h3><div class="role">VP International Business</div><p>International defence contracting and strategic growth.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="roadmap section-pad">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="section-label">06 / Strategic roadmap</div><h2 class="section-title">Validated foundation.<br><em>Sovereign scale.</em></h2></div>
+        <p class="section-intro">A phased path from validated core capability to dual-domain prototypes and Canadian onshore scale-up.</p>
+      </div>
+      <div class="roadmap-grid">
+        <article class="roadmap-card"><div class="roadmap-date">Current phase · Ongoing</div><h3>Validated core</h3><p>Field-validated sensing technology. Patent filed. DND pre-qualification for defence sensing solutions.</p></article>
+        <article class="roadmap-card"><div class="roadmap-date">Next milestone · 2026–2027</div><h3>Air & marine prototypes</h3><p>Advancing dual-domain prototypes, supported by a resilient, multi-source supply chain.</p></article>
+        <article class="roadmap-card"><div class="roadmap-date">Scale-up · Mid-2027+</div><h3>Canadian production</h3><p>Expanding onshore assembly and operational capacity to support growing defence and commercial demand.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
+    <div class="container">
+      <div class="eyebrow">07 / Schedule a defence briefing</div>
+      <h2>Build the<br><em>invisible shield.</em></h2>
+      <p class="cta-copy">Request a defence briefing. Discuss a technical demonstration. Explore pilot deployments or strategic engagement.</p>
+      <a class="btn btn-primary" href="mailto:Fred.Schwartz@korrix.com?subject=Korrix%20Defence%20Briefing">Connect With Our Defence Team <span>↗</span></a>
+      <div class="contact-details">
+        <a href="mailto:Fred.Schwartz@korrix.com"><b>EMAIL</b>Fred.Schwartz@korrix.com</a>
+        <a href="tel:+18194101149"><b>PHONE</b>+1 (819) 410-1149</a>
+        <div><b>LOCATION</b>Ottawa, ON &amp; Campbell’s Bay, QC, Canada</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <a class="brand" href="#top">KORRIX<span>.</span></a>
+    <div class="footer-tag">The invisible shield for defence & infrastructure.</div>
+    <div class="footer-location">© <span id="year"></span> Korrix Technologies · Canada</div>
+  </div>
+</footer>
+<script>
+  const menuButton = document.getElementById('menuToggle');
+  const navigation = document.getElementById('navLinks');
+  menuButton.addEventListener('click', () => {
+    const open = navigation.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navigation.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
+  }));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
