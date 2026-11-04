@@ -1,0 +1,689 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Korrix Technologies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --bg-900:#05080F;
+  --bg-800:#090D1A;
+  --bg-700:#0E1526;
+  --bg-600:#141E32;
+  --accent:#3B82F6;
+  --warm:#F59E0B;
+  --text:#EEF2FF;
+  --text-2:#8B9BB4;
+  --text-3:#4B5A72;
+  --border:rgba(59,130,246,0.15);
+  --border-dim:rgba(255,255,255,0.06);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-900);
+  color:var(--text);
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+  padding-left:max(0px,env(safe-area-inset-left,0px));
+  padding-right:max(0px,env(safe-area-inset-right,0px));
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,8,15,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-dim);padding-top:env(safe-area-inset-top,0px)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px));height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;letter-spacing:0.08em;color:var(--text);text-decoration:none;text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-2);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--bg-900);background:var(--accent);border:none;padding:10px 20px;cursor:pointer;text-decoration:none;transition:background 0.2s;white-space:nowrap}
+.nav-cta:hover{background:#2563EB}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-2)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative;overflow:hidden;padding:calc(env(safe-area-inset-top,0px) + 64px + 80px) max(16px,env(safe-area-inset-left,0px)) 80px;text-align:left}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 65% 50%,rgba(59,130,246,0.07) 0%,transparent 70%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:600px}
+@media(min-width:900px){.hero-content{max-width:52%}}
+
+/* RADAR WIDGET */
+.radar-widget{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:600px;height:600px;pointer-events:none;opacity:0.9}
+@media(max-width:900px){.radar-widget{opacity:0.13;right:-150px;width:500px;height:500px}}
+.radar-ring{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(59,130,246,0.18)}
+.radar-ring-1{width:560px;height:560px}
+.radar-ring-2{width:390px;height:390px}
+.radar-ring-3{width:250px;height:250px}
+.radar-ring-4{width:120px;height:120px}
+.radar-ch{position:absolute;top:50%;left:calc(50% - 280px);width:560px;height:1px;background:linear-gradient(90deg,transparent,rgba(59,130,246,0.11) 20%,rgba(59,130,246,0.11) 80%,transparent)}
+.radar-cv{position:absolute;left:50%;top:calc(50% - 280px);width:1px;height:560px;background:linear-gradient(180deg,transparent,rgba(59,130,246,0.11) 20%,rgba(59,130,246,0.11) 80%,transparent)}
+.radar-sweep{position:absolute;left:calc(50% - 280px);top:calc(50% - 280px);width:560px;height:560px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,transparent 160deg,rgba(59,130,246,0.02) 210deg,rgba(59,130,246,0.07) 245deg,rgba(59,130,246,0.18) 265deg,rgba(80,150,255,0.45) 278deg,rgba(59,130,246,0.25) 285deg,transparent 300deg,transparent 360deg);animation:radar-sweep 5s linear infinite}
+@keyframes radar-sweep{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.radar-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:rgba(59,130,246,0.6);box-shadow:0 0 10px 3px rgba(59,130,246,0.3),0 0 22px 7px rgba(59,130,246,0.1)}
+.radar-blip{position:absolute;transform:translate(-50%,-50%);border-radius:50%;animation:blip-pulse 2s ease-in-out infinite}
+.radar-blip.blue{width:9px;height:9px;background:#3B82F6;box-shadow:0 0 9px 3px rgba(59,130,246,0.7)}
+.radar-blip.amber{width:9px;height:9px;background:#F59E0B;box-shadow:0 0 9px 3px rgba(245,158,11,0.7);animation-duration:2.7s}
+@keyframes blip-pulse{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1)}50%{opacity:0.5;transform:translate(-50%,-50%) scale(0.75)}}
+.radar-label{position:absolute;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(100,140,180,0.4);white-space:nowrap}
+
+.eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;position:relative}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,9vw,96px);font-weight:900;line-height:1.0;letter-spacing:-0.01em;text-transform:uppercase;color:var(--text);max-width:900px;text-wrap:balance;position:relative;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-sub{font-size:clamp(15px,2.2vw,18px);color:var(--text-2);max-width:560px;line-height:1.65;position:relative;margin-bottom:40px}
+.hero-stats{display:flex;gap:40px;justify-content:flex-start;flex-wrap:wrap;margin-bottom:40px;position:relative}
+.hero-stat-value{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:700;color:var(--accent);display:block;line-height:1}
+.hero-stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-top:4px;display:block}
+.hero-actions{display:flex;gap:16px;justify-content:flex-start;flex-wrap:wrap;position:relative}
+
+.qualified-band{background:rgba(59,130,246,0.06);border:1px solid var(--border);padding:12px 24px;display:inline-flex;align-items:center;gap:12px;margin-bottom:40px;position:relative}
+.qualified-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse-dot 2s ease-in-out infinite;flex-shrink:0}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.7)}}
+.qualified-text{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-2)}
+
+/* BUTTONS */
+.btn-primary{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:var(--accent);color:var(--bg-900);border:none;padding:14px 32px;cursor:pointer;text-decoration:none;transition:background 0.2s;display:inline-block}
+.btn-primary:hover{background:#2563EB}
+.btn-ghost{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;background:transparent;color:var(--text-2);border:1px solid var(--border);padding:14px 32px;cursor:pointer;text-decoration:none;transition:color 0.2s,border-color 0.2s;display:inline-block}
+.btn-ghost:hover{color:var(--text);border-color:rgba(59,130,246,0.4)}
+
+/* TICKER */
+.ticker-wrap{overflow:hidden;background:var(--accent);padding:14px 0}
+.ticker-track{display:flex;animation:ticker 32s linear infinite;width:max-content}
+.ticker-track:hover{animation-play-state:paused}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.6);padding:0 32px;white-space:nowrap}
+.ticker-item.accent{color:#fff}
+
+/* SECTIONS */
+section{padding:100px max(16px,env(safe-area-inset-left,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.section-h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.05;text-transform:uppercase;color:var(--text);max-width:720px;text-wrap:balance;margin-bottom:24px}
+.section-h2 em{font-style:italic;color:var(--text-2);font-weight:700}
+.section-lead{font-size:16px;color:var(--text-2);max-width:600px;line-height:1.7;margin-bottom:48px}
+
+/* PROBLEM */
+.problem-section{background:var(--bg-800)}
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.problem-cards{display:flex;flex-direction:column;gap:16px}
+.problem-card{background:var(--bg-700);border:1px solid var(--border-dim);padding:24px 28px;border-left:3px solid var(--warm)}
+.problem-card-title{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--text);margin-bottom:8px}
+.problem-card p{font-size:14px;color:var(--text-2);line-height:1.6}
+
+/* PLATFORM STAGES */
+.platform-section{background:var(--bg-900)}
+.stages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.stage-card{background:var(--bg-700);padding:36px 28px;position:relative;overflow:hidden}
+.stage-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+.stage-num{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:rgba(59,130,246,0.1);line-height:1;position:absolute;top:16px;right:20px}
+.stage-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.stage-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);margin-bottom:14px;line-height:1.1}
+.stage-desc{font-size:14px;color:var(--text-2);line-height:1.6;margin-bottom:20px}
+.stage-specs{display:flex;flex-direction:column;gap:6px}
+.spec-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-3)}
+.spec-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* HARDWARE SECTION */
+.hardware-section{background:var(--bg-800)}
+.hw-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:56px}
+.hw-card{background:var(--bg-700);position:relative;overflow:hidden}
+.hw-photo{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:brightness(0.72) saturate(0.85)}
+.hw-card:hover .hw-photo{filter:brightness(0.85) saturate(0.95);transition:filter 0.4s}
+.hw-info{padding:32px 28px}
+.hw-badge{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);padding:4px 12px;display:inline-block;margin-bottom:16px}
+.hw-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;text-transform:uppercase;color:var(--text);line-height:1.05;margin-bottom:12px}
+.hw-desc{font-size:14px;color:var(--text-2);line-height:1.65;margin-bottom:24px}
+.hw-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hw-spec{border-top:1px solid var(--border-dim);padding-top:12px}
+.hw-spec-val{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--text);display:block;line-height:1}
+.hw-spec-val em{color:var(--warm);font-style:normal}
+.hw-spec-label{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-3);margin-top:3px;display:block}
+.hw-divider{background:var(--bg-600);display:flex;align-items:center;justify-content:center;padding:16px;gap:16px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-3);border-top:1px solid var(--border-dim)}
+.hw-divider span{color:var(--warm)}
+
+/* INFOGRAPHIC SPLIT */
+.infographic-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:0}
+.infographic-panel{background:var(--bg-700);position:relative;overflow:hidden}
+.infographic-panel.air{border-top:3px solid var(--accent)}
+.infographic-panel.sea{border-top:3px solid var(--warm)}
+
+.infograph-header{padding:28px 28px 20px;border-bottom:1px solid var(--border-dim)}
+.infograph-domain{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px}
+.infograph-panel.air .infograph-domain,.infographic-panel.air .infograph-domain{color:var(--accent)}
+.infographic-panel.sea .infograph-domain{color:var(--warm)}
+.infograph-title{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;text-transform:uppercase;color:var(--text);line-height:1.05}
+
+.infograph-visual{position:relative;background:var(--bg-900);overflow:hidden}
+.infograph-visual img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top;display:block;filter:brightness(0.65) saturate(0.8)}
+.infograph-overlay{position:absolute;inset:0;pointer-events:none}
+
+/* SVG annotation layer */
+.annot-svg{position:absolute;inset:0;width:100%;height:100%}
+
+.infograph-specs{padding:24px 28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ispec{border-left:2px solid var(--border);padding-left:12px}
+.ispec-val{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--text);display:block;line-height:1.1}
+.ispec-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-3);margin-top:3px;display:block}
+.infographic-panel.air .ispec-val em,.infographic-panel.air .ispec-val span{color:var(--accent)}
+.infographic-panel.sea .ispec-val em,.infographic-panel.sea .ispec-val span{color:var(--warm)}
+
+.infograph-feat{padding:0 28px 24px;display:flex;flex-direction:column;gap:8px}
+.ifeat{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--text-2);line-height:1.5}
+.ifeat::before{content:'';width:5px;height:5px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.infographic-panel.air .ifeat::before{background:var(--accent)}
+.infographic-panel.sea .ifeat::before{background:var(--warm)}
+
+/* APPLICATIONS */
+.applications-section{background:var(--bg-800)}
+.app-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:56px}
+.app-card{background:var(--bg-700);padding:36px 28px;position:relative;overflow:hidden;transition:background 0.2s}
+.app-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.app-card:hover{background:var(--bg-600)}
+.app-card:hover::after{transform:scaleX(1)}
+.app-icon{width:40px;height:40px;margin-bottom:18px;color:var(--accent);opacity:0.8}
+.app-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--text);margin-bottom:10px}
+.app-desc{font-size:13px;color:var(--text-2);line-height:1.6}
+
+/* DIFFERENTIATION */
+.diff-section{background:var(--bg-900)}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.diff-card{background:var(--bg-700);padding:36px 28px;border-top:3px solid var(--bg-600);transition:border-color 0.2s}
+.diff-card:hover{border-top-color:var(--accent)}
+.diff-icon{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:rgba(59,130,246,0.12);line-height:1;margin-bottom:16px}
+.diff-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:10px;letter-spacing:0.04em}
+.diff-desc{font-size:13px;color:var(--text-2);line-height:1.65}
+
+/* STATS */
+.stats-band{background:var(--bg-700);border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);padding:72px max(16px,env(safe-area-inset-left,0px))}
+.stats-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
+.stat-block{padding:32px 20px;text-align:center;border-right:1px solid var(--border-dim)}
+.stat-block:last-child{border-right:none}
+.stat-val{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,4vw,52px);font-weight:900;color:var(--text);line-height:1;display:block}
+.stat-val span{color:var(--warm)}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-3);margin-top:8px;display:block}
+
+/* LEADERSHIP */
+.team-section{background:var(--bg-800)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin-top:56px}
+.team-card{background:var(--bg-700);padding:28px 24px}
+.team-name{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;color:var(--text);line-height:1.1;margin-bottom:4px}
+.team-role{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.team-bio{font-size:13px;color:var(--text-2);line-height:1.55}
+
+/* CTA */
+.cta-section{background:var(--bg-900);text-align:center}
+.cta-inner{max-width:720px;margin:0 auto}
+.cta-h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(40px,6vw,64px);font-weight:900;text-transform:uppercase;line-height:1.0;color:var(--text);margin-bottom:20px;text-wrap:balance}
+.cta-h2 em{font-style:italic;color:var(--warm)}
+.cta-sub{font-size:15px;color:var(--text-2);line-height:1.65;margin-bottom:36px}
+.cta-contact{margin-top:40px;padding-top:40px;border-top:1px solid var(--border-dim);display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:left}
+.contact-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-3);margin-bottom:6px}
+.contact-val{font-size:14px;color:var(--text);word-break:break-all}
+
+/* COMPACT DIAGRAMS SECTION */
+.diagrams-section{background:var(--bg-800)}
+.diagrams-row{display:flex;gap:40px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin-top:48px}
+.diagram-item{flex:0 0 auto;width:280px;text-align:center}
+.diagram-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-3);margin-top:14px}
+.diagram-item svg{width:280px;height:220px;display:block;margin:0 auto}
+
+/* FOOTER */
+footer{background:var(--bg-800);border-top:1px solid var(--border-dim);padding:36px max(16px,env(safe-area-inset-left,0px));padding-bottom:max(36px,env(safe-area-inset-bottom,0px))}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:17px;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-2)}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;gap:28px;list-style:none;flex-wrap:wrap}
+.footer-links a{font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-3);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--text-2)}
+.footer-copy{font-size:12px;color:var(--text-3)}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:calc(env(safe-area-inset-top,0px) + 64px);left:0;right:0;background:var(--bg-800);padding:24px max(16px,env(safe-area-inset-left,0px));gap:20px;border-bottom:1px solid var(--border-dim)}
+  .hamburger{display:flex}
+  .problem-grid,.stages-grid,.diff-grid{grid-template-columns:1fr}
+  .hw-grid,.infographic-wrap{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .stat-block:nth-child(3){border-right:none}
+  .cta-contact{grid-template-columns:1fr}
+  section{padding:72px max(16px,env(safe-area-inset-left,0px))}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:16px}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:24px}
+  .hero-actions,.hero-actions *{flex-direction:column;width:100%;text-align:center}
+  .hw-specs-grid,.infograph-specs{grid-template-columns:1fr}
+}
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg width="18" height="22" viewBox="0 0 20 24" fill="none" aria-hidden="true" style="flex-shrink:0">
+        <path d="M10 1L2 4v8c0 5 3.5 9 8 11 4.5-2 8-6 8-11V4L10 1Z" stroke="#3B82F6" stroke-width="1.5" stroke-linejoin="round" fill="rgba(59,130,246,0.08)"/>
+        <circle cx="10" cy="11" r="3" stroke="#3B82F6" stroke-width="1" fill="none"/>
+      </svg>
+      KORRIX<span>.</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#threat">Threat</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#hardware">Hardware</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Request Briefing</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="radar-widget" aria-hidden="true">
+    <div class="radar-ring radar-ring-1"></div>
+    <div class="radar-ring radar-ring-2"></div>
+    <div class="radar-ring radar-ring-3"></div>
+    <div class="radar-ring radar-ring-4"></div>
+    <div class="radar-ch"></div>
+    <div class="radar-cv"></div>
+    <div class="radar-sweep"></div>
+    <div class="radar-center"></div>
+    <div class="radar-blip blue" style="left:67%;top:30%"></div>
+    <div class="radar-blip blue" style="left:30%;top:65%"></div>
+    <div class="radar-blip amber" style="left:72%;top:67%"></div>
+    <div class="radar-label" style="right:8%;top:14%">SOVEREIGN AWARENESS / 01</div>
+    <div class="radar-label" style="left:12%;bottom:26%">PASSIVE BY DESIGN</div>
+  </div>
+  <div class="hero-content">
+    <div class="eyebrow">Canadian Sovereign Defense Technology</div>
+    <h1>THE INVISIBLE<br><em>SHIELD.</em></h1>
+    <p class="hero-sub">Advanced detection algorithms protecting ships, ports, critical infrastructure, and borders from aerial and maritime drone threats. Zero emissions. Sub-second response.</p>
+    <div class="qualified-band">
+      <div class="qualified-dot"></div>
+      <span class="qualified-text">DND Pre-Qualified | Ottawa, ON &amp; Campbell's Bay, QC, Canada</span>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-value">&lt;0.4s</span><span class="hero-stat-label">Threat Lock Latency</span></div>
+      <div class="hero-stat"><span class="hero-stat-value">100%</span><span class="hero-stat-label">Zero RF Emissions</span></div>
+      <div class="hero-stat"><span class="hero-stat-value">98.5%</span><span class="hero-stat-label">Field Accuracy</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request a Briefing</a>
+      <a href="#platform" class="btn-ghost">See the Platform</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item accent">Counter-UAS</span>
+    <span class="ticker-item">Acoustic Triangulation</span>
+    <span class="ticker-item accent">Hydro-Acoustic Array</span>
+    <span class="ticker-item">Zero RF Emissions</span>
+    <span class="ticker-item accent">Maritime Security</span>
+    <span class="ticker-item">Port Protection</span>
+    <span class="ticker-item accent">AI Data Fusion</span>
+    <span class="ticker-item">Border Defense</span>
+    <span class="ticker-item accent">Mobile Deployment</span>
+    <span class="ticker-item">Sub-Second Detection</span>
+    <span class="ticker-item accent">DND Pre-Qualified</span>
+    <span class="ticker-item">Critical Infrastructure</span>
+    <span class="ticker-item accent">Counter-UAS</span>
+    <span class="ticker-item">Acoustic Triangulation</span>
+    <span class="ticker-item accent">Hydro-Acoustic Array</span>
+    <span class="ticker-item">Zero RF Emissions</span>
+    <span class="ticker-item accent">Maritime Security</span>
+    <span class="ticker-item">Port Protection</span>
+    <span class="ticker-item accent">AI Data Fusion</span>
+    <span class="ticker-item">Border Defense</span>
+    <span class="ticker-item accent">Mobile Deployment</span>
+    <span class="ticker-item">Sub-Second Detection</span>
+    <span class="ticker-item accent">DND Pre-Qualified</span>
+    <span class="ticker-item">Critical Infrastructure</span>
+  </div>
+</div>
+
+<!-- THREAT -->
+<section class="problem-section" id="threat">
+  <div class="section-inner">
+    <div class="problem-grid">
+      <div>
+        <div class="section-eyebrow">The Operational Gap</div>
+        <h2 class="section-h2">LEGACY AIR DEFENSE FAILS AGAINST <em>AUTONOMOUS UAVs</em></h2>
+        <p class="section-lead">The battlefield has changed. Small, low-altitude drones and unmanned maritime vessels operate below the detection threshold of conventional systems. The window to respond is measured in seconds. And conventional radar gives away your position.</p>
+      </div>
+      <div class="problem-cards">
+        <div class="problem-card">
+          <div class="problem-card-title">Active Radar Exposes You</div>
+          <p>It acts like an electronic lighthouse. Adversaries immediately pinpoint, geolocate, and target emitting sensors using anti-radiation weaponry.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-title">RF Jamming Creates Collateral Damage</div>
+          <p>Active frequency jammers disrupt civilian emergency bands and air traffic control. Legally prohibited near airports and urban cores.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-card-title">Low-Altitude Blind Spots</div>
+          <p>Low-cost, quiet autonomous drones fly beneath standard radar horizons, easily bypassing traditional perimeter defense grids.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM STAGES -->
+<section class="platform-section" id="platform">
+  <div class="section-inner">
+    <div class="section-eyebrow">Proprietary Defense Innovation</div>
+    <h2 class="section-h2">ACOUSTIC TRIANGULATION REPLACES <em>RADAR ILLUMINATION</em></h2>
+    <p class="section-lead">Three integrated stages deliver precise, real-time threat awareness across air, land, and maritime domains - without broadcasting a single radio frequency.</p>
+    <div class="stages-grid">
+      <div class="stage-card">
+        <div class="stage-num">01</div>
+        <div class="stage-label">Stage 01</div>
+        <div class="stage-title">Acoustic Micro-Nodes</div>
+        <p class="stage-desc">Passive sensor arrays deployed across the perimeter. No emissions. All-weather. Detect aerial and sub-surface acoustic signatures simultaneously.</p>
+        <div class="stage-specs">
+          <div class="spec-item">15 TDOA pairs per station</div>
+          <div class="spec-item">All-weather operational durability</div>
+          <div class="spec-item">Low-cost node deployment</div>
+          <div class="spec-item">Air and undersurface detection</div>
+        </div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">02</div>
+        <div class="stage-label">Stage 02</div>
+        <div class="stage-title">In-House AI Data Fusion</div>
+        <p class="stage-desc">Proprietary software pipeline fuses acoustic, optical, thermal, and sensor data streams in real time. In-house trained models. Precise 3D coordinate output.</p>
+        <div class="stage-specs">
+          <div class="spec-item">Acoustic, optical, thermal fusion</div>
+          <div class="spec-item">Kalman filter trajectory tracking</div>
+          <div class="spec-item">In-house trained AI models</div>
+          <div class="spec-item">Precise 3D coordinates</div>
+        </div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-num">03</div>
+        <div class="stage-label">Stage 03</div>
+        <div class="stage-title">Threat Lock and C2 Integration</div>
+        <p class="stage-desc">Classified threat data delivered to operators in under 0.4 seconds. Seamless C2 integration via real-time tactical dashboard and secure data relay.</p>
+        <div class="stage-specs">
+          <div class="spec-item">&lt;0.4s threat lock latency</div>
+          <div class="spec-item">Real-time tactical dashboard</div>
+          <div class="spec-item">C2 system integration</div>
+          <div class="spec-item">100% non-emitting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE -->
+<section class="hardware-section" id="hardware">
+  <div class="section-inner">
+    <div class="section-eyebrow">Multi-Domain Protection</div>
+    <h2 class="section-h2">ONE PLATFORM.<br><em>AIR AND SEA.</em></h2>
+    <p class="section-lead">Korrix deploys as a mobile ground station or a submerged hydro-acoustic array. Same software. Same C2 interface. Full spectrum coverage.</p>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="applications-section" id="applications">
+  <div class="section-inner">
+    <div class="section-eyebrow">Applications</div>
+    <h2 class="section-h2">PROTECTING WHAT <em>CANNOT AFFORD TO FAIL</em></h2>
+    <p class="section-lead">Korrix deploys across a full spectrum of critical assets - wherever a threat can appear from air or water.</p>
+    <div class="app-grid">
+      <div class="app-card">
+        <svg class="app-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 30 L20 10 L36 30 Z"/><path d="M12 30 L12 22 L16 22 L16 30"/><path d="M20 30 L20 18"/><line x1="2" y1="30" x2="38" y2="30"/></svg>
+        <div class="app-title">Naval Vessels</div>
+        <p class="app-desc">Persistent aerial and maritime threat awareness for ships in contested zones. No electronic signature. Continuous passive coverage.</p>
+      </div>
+      <div class="app-card">
+        <svg class="app-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="16" width="32" height="18" rx="1"/><path d="M8 16 L8 8 L14 8 L14 12 L18 12 L18 8"/><line x1="4" y1="34" x2="36" y2="34"/><line x1="20" y1="8" x2="20" y2="4"/><line x1="16" y1="4" x2="24" y2="4"/></svg>
+        <div class="app-title">Port Infrastructure</div>
+        <p class="app-desc">Layered detection for port perimeters, cargo facilities, and waterway approaches. Drones and uncrewed surface vessels identified before they arrive.</p>
+      </div>
+      <div class="app-card">
+        <svg class="app-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 4 L26 12 L26 36 L14 36 L14 12 Z"/><line x1="8" y1="36" x2="32" y2="36"/><rect x="16" y="18" width="8" height="10"/><line x1="20" y1="4" x2="20" y2="1"/></svg>
+        <div class="app-title">Critical Infrastructure</div>
+        <p class="app-desc">Power plants, pipelines, water facilities, communications hubs. Continuous passive surveillance with zero disruption to normal operations.</p>
+      </div>
+      <div class="app-card">
+        <svg class="app-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20 Q20 6 36 20"/><path d="M4 20 Q20 34 36 20"/><circle cx="20" cy="20" r="4"/><line x1="4" y1="20" x2="36" y2="20"/></svg>
+        <div class="app-title">Border Security</div>
+        <p class="app-desc">Mobile detection capability for land and maritime border segments. Rapid deployment, persistent monitoring, reliable classification across extended perimeters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATION -->
+<section class="diff-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Competitive Differentiation</div>
+    <h2 class="section-h2">UNBEATABLE <em>TECHNO-ECONOMIC ADVANTAGE</em></h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">01</div>
+        <div class="diff-title">Unbeatable Unit Economics</div>
+        <p class="diff-desc">Significantly lower node cost enables dense, resilient perimeter sensor meshes that competitors cannot replicate at the same coverage-to-cost ratio.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">02</div>
+        <div class="diff-title">Proprietary Software IP</div>
+        <p class="diff-desc">Single software platform adaptable across aerial drone defense, land border, and hydro-acoustic subsea sensing. One unified data fusion engine for all domains.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">03</div>
+        <div class="diff-title">100% Onshore Supply Chain</div>
+        <p class="diff-desc">Canadian manufacturing and assembly in Ottawa and Campbell's Bay, QC. Full sovereign hardware security. No foreign components in critical processing stages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPACT DIAGRAMS -->
+<section class="diagrams-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Sensor Hardware</div>
+    <h2 class="section-h2">PRECISION ENGINEERING<br><em>IN BOTH DOMAINS.</em></h2>
+    <div class="diagrams-row">
+
+      <!-- K-AAS small -->
+      <div class="diagram-item">
+        <svg viewBox="0 0 500 380" aria-label="K-AAS acoustic aerial station">
+          <defs>
+            <marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3B82F6"/></marker>
+            <marker id="a2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#F59E0B"/></marker>
+          </defs>
+          <rect x="0" y="310" width="500" height="70" fill="#090D1A"/>
+          <line x1="0" y1="310" x2="500" y2="310" stroke="#1E2A42" stroke-width="1"/>
+          <g opacity="0.3" fill="#1E2A42"><circle cx="30" cy="325" r="2"/><circle cx="70" cy="320" r="1.5"/><circle cx="390" cy="322" r="2"/><circle cx="430" cy="318" r="1.5"/></g>
+          <path d="M 60 310 Q 250 100 440 310" stroke="#3B82F6" stroke-width="1" stroke-dasharray="6 5" fill="rgba(59,130,246,0.03)" opacity="0.5"/>
+          <text x="250" y="136" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="3" fill="rgba(59,130,246,0.4)" text-anchor="middle">DETECTION ARC</text>
+          <line x1="250" y1="290" x2="185" y2="310" stroke="#4B5A72" stroke-width="3" stroke-linecap="round"/>
+          <line x1="250" y1="290" x2="315" y2="310" stroke="#4B5A72" stroke-width="3" stroke-linecap="round"/>
+          <line x1="250" y1="290" x2="250" y2="312" stroke="#4B5A72" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="185" cy="311" r="4" fill="#3B4A60"/><circle cx="315" cy="311" r="4" fill="#3B4A60"/><circle cx="250" cy="313" r="4" fill="#3B4A60"/>
+          <rect x="247" y="80" width="6" height="210" fill="#2A3A50" rx="2"/>
+          <circle cx="250" cy="175" r="10" fill="#1E2A42" stroke="#3B82F6" stroke-width="1.5"/>
+          <rect x="210" y="288" width="80" height="22" rx="3" fill="#1E2A42" stroke="#2A3A50" stroke-width="1.5"/>
+          <circle cx="225" cy="299" r="2.5" fill="#3B82F6" opacity="0.9"/><circle cx="233" cy="299" r="2.5" fill="#3B82F6" opacity="0.6"/><circle cx="241" cy="299" r="2.5" fill="#3B82F6" opacity="0.3"/>
+          <line x1="250" y1="80" x2="250" y2="58" stroke="#3B4A60" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="140" y1="118" x2="360" y2="118" stroke="#3B4A60" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="155" y1="175" x2="345" y2="175" stroke="#3B4A60" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="160" y1="232" x2="340" y2="232" stroke="#3B4A60" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="250" cy="52" rx="7" ry="9" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="250" cy="50" rx="5" ry="4" fill="#3B82F6" opacity="0.3"/>
+          <ellipse cx="135" cy="118" rx="9" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="133" cy="118" rx="4" ry="5" fill="#3B82F6" opacity="0.3"/>
+          <ellipse cx="365" cy="118" rx="9" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="367" cy="118" rx="4" ry="5" fill="#3B82F6" opacity="0.3"/>
+          <ellipse cx="150" cy="175" rx="9" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="148" cy="175" rx="4" ry="5" fill="#3B82F6" opacity="0.3"/>
+          <ellipse cx="350" cy="175" rx="9" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="352" cy="175" rx="4" ry="5" fill="#3B82F6" opacity="0.3"/>
+          <ellipse cx="155" cy="232" rx="9" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="153" cy="232" rx="4" ry="5" fill="#3B82F6" opacity="0.3"/>
+          <ellipse cx="345" cy="232" rx="9" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/><ellipse cx="347" cy="232" rx="4" ry="5" fill="#3B82F6" opacity="0.3"/>
+          <line x1="367" y1="118" x2="425" y2="90" stroke="#3B82F6" stroke-width="1" marker-end="url(#a1)"/>
+          <rect x="427" y="77" width="68" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="434" y="89" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#3B82F6">MIC ARRAY x7</text>
+          <line x1="350" y1="175" x2="420" y2="162" stroke="#3B82F6" stroke-width="1" marker-end="url(#a1)"/>
+          <rect x="423" y="150" width="70" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="430" y="162" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#3B82F6">15 TDOA PAIRS</text>
+          <line x1="290" y1="299" x2="355" y2="299" stroke="#F59E0B" stroke-width="1" marker-end="url(#a2)"/>
+          <rect x="358" y="289" width="72" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="365" y="301" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#F59E0B">IP67 CONTROL</text>
+          <line x1="140" y1="118" x2="80" y2="92" stroke="#3B82F6" stroke-width="1" marker-end="url(#a1)"/>
+          <rect x="8" y="80" width="70" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="15" y="92" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#3B82F6">ZERO RF OUT</text>
+          <text x="250" y="355" font-family="Barlow Condensed" font-size="13" font-weight="700" letter-spacing="3" fill="#2A3A50" text-anchor="middle">ACOUSTIC AERIAL STATION</text>
+        </svg>
+        <div class="diagram-label" style="color:var(--accent)">K-AAS / Aerial</div>
+      </div>
+
+      <!-- K-HAS small -->
+      <div class="diagram-item">
+        <svg viewBox="0 0 500 380" aria-label="K-HAS hydro-acoustic station">
+          <defs>
+            <marker id="b1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3B82F6"/></marker>
+            <marker id="b2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#F59E0B"/></marker>
+            <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0E1526" stop-opacity="0.95"/><stop offset="100%" stop-color="#070D1E" stop-opacity="1"/></linearGradient>
+            <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0A1020"/><stop offset="100%" stop-color="#0E1526"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="500" height="175" fill="url(#sg)"/>
+          <rect x="0" y="175" width="500" height="205" fill="url(#wg)"/>
+          <line x1="0" y1="175" x2="500" y2="175" stroke="#1E3A5A" stroke-width="1.5"/>
+          <path d="M 30 185 Q 80 180 130 185 Q 180 190 230 185 Q 280 180 330 185 Q 380 190 470 185" stroke="#132030" stroke-width="1" fill="none" opacity="0.7"/>
+          <text x="20" y="171" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="3" fill="#1E4A6A" opacity="0.9">WATERLINE</text>
+          <rect x="247" y="58" width="6" height="100" fill="#2A3A50" rx="2"/>
+          <path d="M 250 65 Q 275 60 270 55 Q 275 50 250 55" stroke="#F59E0B" stroke-width="1.2" fill="none" stroke-dasharray="3 2" opacity="0.7"/>
+          <line x1="250" y1="58" x2="250" y2="30" stroke="#3B4A60" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="250" cy="28" r="4" fill="#1A2436" stroke="#F59E0B" stroke-width="1.5"/>
+          <ellipse cx="250" cy="150" rx="52" ry="20" fill="#1A2436" stroke="#2A3A50" stroke-width="1.5"/>
+          <ellipse cx="250" cy="140" rx="52" ry="20" fill="#1E2A42" stroke="#2A3A50" stroke-width="1.5"/>
+          <ellipse cx="250" cy="132" rx="40" ry="14" fill="#C45A00" opacity="0.85"/>
+          <ellipse cx="250" cy="128" rx="38" ry="10" fill="#D96A00" opacity="0.9"/>
+          <path d="M 250 160 Q 252 220 250 310" stroke="#2A3A50" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+          <rect x="247" y="160" width="6" height="80" fill="#1E2A42" rx="2"/>
+          <circle cx="250" cy="250" r="12" fill="#0E1526" stroke="#3B82F6" stroke-width="2"/>
+          <circle cx="250" cy="250" r="6" fill="#3B82F6" opacity="0.5"/>
+          <line x1="238" y1="250" x2="130" y2="262" stroke="#2A3A50" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="122" cy="263" rx="14" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/>
+          <line x1="262" y1="250" x2="370" y2="262" stroke="#2A3A50" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="378" cy="263" rx="14" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5"/>
+          <line x1="242" y1="258" x2="155" y2="310" stroke="#2A3A50" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="148" cy="315" rx="14" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5" transform="rotate(-25 148 315)"/>
+          <line x1="258" y1="258" x2="345" y2="310" stroke="#2A3A50" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="352" cy="315" rx="14" ry="7" fill="#1A2436" stroke="#3B82F6" stroke-width="1.5" transform="rotate(25 352 315)"/>
+          <ellipse cx="250" cy="285" rx="155" ry="55" stroke="#3B82F6" stroke-width="1" stroke-dasharray="8 5" fill="rgba(59,130,246,0.03)" opacity="0.5"/>
+          <line x1="254" y1="40" x2="330" y2="22" stroke="#F59E0B" stroke-width="1" marker-end="url(#b2)"/>
+          <rect x="333" y="12" width="84" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="340" y="24" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#F59E0B">DATA ANTENNA</text>
+          <line x1="300" y1="130" x2="370" y2="108" stroke="#F59E0B" stroke-width="1" marker-end="url(#b2)"/>
+          <rect x="373" y="98" width="66" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="380" y="110" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#F59E0B">BUOY FLOAT</text>
+          <line x1="108" y1="263" x2="50" y2="248" stroke="#3B82F6" stroke-width="1" marker-end="url(#b1)"/>
+          <rect x="8" y="236" width="88" height="18" fill="rgba(14,21,38,0.95)" rx="2"/>
+          <text x="15" y="248" font-family="Barlow Condensed" font-size="10" font-weight="600" letter-spacing="1.5" fill="#3B82F6">HYDROPHONE x4</text>
+          <text x="250" y="377" font-family="Barlow Condensed" font-size="13" font-weight="700" letter-spacing="3" fill="#2A3A50" text-anchor="middle">HYDRO-ACOUSTIC STATION</text>
+        </svg>
+        <div class="diagram-label" style="color:var(--warm)">K-HAS / Maritime</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="stats-grid">
+    <div class="stat-block"><span class="stat-val">$42<span>.6B</span></span><span class="stat-label">Global Defense TAM</span></div>
+    <div class="stat-block"><span class="stat-val">22<span>.4%</span></span><span class="stat-label">Market CAGR</span></div>
+    <div class="stat-block"><span class="stat-val">&lt;0<span>.4s</span></span><span class="stat-label">Threat Lock Latency</span></div>
+    <div class="stat-block"><span class="stat-val">98<span>.5%</span></span><span class="stat-label">Field Accuracy</span></div>
+    <div class="stat-block"><span class="stat-val">0<span>RF</span></span><span class="stat-label">Emission Signature</span></div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="section-inner">
+    <div class="section-eyebrow">Validation and Leadership</div>
+    <h2 class="section-h2">INSTITUTIONAL BACKING.<br><em>PROVEN LEADERSHIP.</em></h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-name">Fred Schwartz</div>
+        <div class="team-role">Chief Executive Officer</div>
+        <p class="team-bio">Corporate strategy, international deals, and sovereign defense compliance. DND Pre-Qualified under Canada's Defense Drone Initiative for Payload and Fusion Software streams.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Dr. Farid Bensebaa</div>
+        <div class="team-role">COO & Head of R&D</div>
+        <p class="team-bio">Ex-NRC Senior Scientist and Team Leader. 15+ years in signal processing, AI, and data science. Architect of Korrix's core detection algorithms.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Volodymyr Shevchuk</div>
+        <div class="team-role">Chief Technology Officer</div>
+        <p class="team-bio">Security architecture and sovereign hardware supply chain. International defense market specialist with deep commercial leadership across Europe and North America.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-name">Arthur W. Salyer</div>
+        <div class="team-role">VP International Business</div>
+        <p class="team-bio">International defense contracting and strategic growth specialist. Leads expansion into allied defense markets and institutional procurement pipelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="eyebrow">Engage With Us</div>
+    <h2 class="cta-h2">THE THREAT IS REAL.<br><em>THE WINDOW IS NOW.</em></h2>
+    <p class="cta-sub">Request a technical demonstration, inquire about pilot deployments for commercial airports, ports, or border installations, or initiate investor engagement under mutual NDA.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="#" class="btn-primary" onclick="return false">Schedule a Defense Briefing</a>
+    </div>
+    <div class="cta-contact">
+      <div><div class="contact-label">Email</div><div class="contact-val">Fred.Schwartz@korrix.com</div></div>
+      <div><div class="contact-label">Phone</div><div class="contact-val">+1 (819) 410-1149</div></div>
+      <div><div class="contact-label">Location</div><div class="contact-val">Ottawa, ON | Campbell's Bay, QC, Canada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KORRIX<span>.</span></div>
+    <ul class="footer-links">
+      <li><a href="#threat">Threat</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#hardware">Hardware</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">2024 Korrix Technologies Inc. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e){
+    const t = document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'})}
+  });
+});
+</script>
+
+</body></html>
